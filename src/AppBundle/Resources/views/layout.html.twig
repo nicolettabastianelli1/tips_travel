@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>{% block title %}Tips &amp; Travel{% endblock %}</title>
+  <meta charset="utf-8">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <link  href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="/css/facebook_css.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="/js/bootstrap.min.js"></script>
+  </head>
+    <body>
+    <div class="container-fluid">
+      <div class="row">
+            {% block login %}
+            {% endblock %}
+
+        <div class="col-md-10 col-md-offset-1 {% block body_class %}social{% endblock %}">
+
+
+            {% block header %}
+                {%include 'AppBundle::commons/header.html.twig' %}
+            {% endblock %}
+
+            {% block bio %}
+                {%include 'AppBundle::commons/bio.html.twig' %}
+            {% endblock %}
+
+            {% block form %}
+            {% endblock %}
+
+            {% block box_viaggio %}
+            {% endblock %}
+
+            {% block box_home %}
+            {% endblock %}
+
+            {% block descrizione_viaggio %}
+            {% endblock %}
+
+
+        </div>
+      </div>
+    </div>
+
+
+    {% block modal_log_out %}
+        {%include 'AppBundle::commons/modal_log_out.html.twig' %}
+    {% endblock %}
+
+    {% block modal_elimana_viaggio %}
+    {% endblock %}
+
+    {% block modal_aggiungi_amici %}
+    {% endblock %}
+
+
+
+    <body>
+    <!-- script elimina viaggio -->
+    <script type="text/javascript">
+    var box_viaggi = null;
+
+    $('.button_elimina_box_viaggio').on('click', function(evt){
+      box_viaggi = $(evt.target).closest('.box_viaggio');
+    })
+
+      $('#button_elimina').on('click', function(evt){
+        evt.preventDefault();
+        box_viaggi.remove();
+      })
+    </script>
+
+
+    <!-- script aggiungi commento -->
+    <script type="text/javascript">
+
+
+    $('.new_commento_aggiungere').on('keyup', function(evt){
+        evt.preventDefault();
+        //alert('ciao');
+
+        if (evt.keyCode == 13) {
+          var totale_caratteri = $(evt.target).val().length;
+          var nuovoMessaggio = $(evt.target).val();
+          var conteggio_a_capo = (nuovoMessaggio.match(/\n/g) || []).length;
+
+          if (conteggio_a_capo != totale_caratteri)
+          {
+                var nuovoMessaggio = $(evt.target).val();
+
+                var nuovoCommento = '<div class="row comment">' + '<div class="col-md-2"><img src="/img/profile_viaggio2.jpg"></div>' + '<div class="col-md-8"><p><span>Luisa Cacciagore :</span>' + nuovoMessaggio + '</p></div>' + '</div>';
+                var parente = $(evt.target).parent();
+                var fratello = $(parente).prev();
+                $(fratello).after(nuovoCommento);
+                $(evt.target).val('');
+          }
+        }
+
+    })
+
+
+    </script>
+
+
+    <!-- script aggiungi email-->
+
+    <script type="text/javascript">
+    $('.aggiungi_email').on('click', function(evt){
+        evt.preventDefault();
+        var newTask = $('.new_email').val();
+        if(newTask != ''){
+         $('.new_email').val('');
+         $('.spazio_email').append('<li>' + newTask + ' <a href="" class="btn btn-primary">x</a> ');
+       }
+
+    });
+    $('.spazio_email').on('click', 'a', function(evt){
+        evt.preventDefault();
+        $(evt.target).parent().remove();
+
+    });
+
+    </script>
+</html>

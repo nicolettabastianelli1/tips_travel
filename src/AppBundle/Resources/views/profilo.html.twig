@@ -1,0 +1,159 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+  {{ nome | capitalize}}
+  {{ cognome | capitalize}}
+
+{% endblock %}
+
+{% block form %}
+    {% for flash_message in app.session.flashbag.get('notice') %}
+      <div class="flash_notice">
+        {{ flash_message }}
+      </div>
+    {% endfor %}
+
+    <div class="row form">
+        <form class="form-inline" method="post">
+          <h2>Il tuo prossimo viaggio?</h2>
+
+        {{ form_start(form_creazione_viaggio) }}
+          <div class="form-group">
+            {{ form_widget(form_creazione_viaggio.meta, {'attr': {'class': 'form-control','id' : 'exampleInputEmail2' }}) }}
+          </div>
+
+          <div class="form-group">
+            {{ form_widget(form_creazione_viaggio.startData, {'attr': {'class': 'form-control','id' : 'exampleInputEmail2' }}) }}
+
+          </div>
+          <div class="form-group data">
+            {{ form_widget(form_creazione_viaggio.endData, {'attr': {'class': 'form-control','id' : 'exampleInputEmail2' }}) }}
+
+          </div>
+
+          <div class="form-group">
+            {{ form_widget(form_creazione_viaggio.descrizione, {'attr': {'class': 'form-control','id' : 'exampleInputEmail2' }}) }}
+          </div>
+
+          <div class="form-group">
+            <a href="" data-toggle="modal" data-target="#myModal_aggiungi_amici"><button type="submit" data-target="#myModal_aggiungi_amici"  class="btn btn-default">AGGIUNGI</button></a>
+          </div>
+
+          <div class="form-group">
+            {{ form_widget(form_creazione_viaggio.send, {'attr': {'class': 'btn btn-default' }}) }}
+          </div>
+
+        {{ form_end(form_creazione_viaggio) }}
+
+      </form>
+    </div>
+
+{% endblock %}
+
+{% block box_viaggio %}
+{% for viaggio in viaggiUtente %}
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 box_viaggio">
+
+          <div class="col-md-2 col-md-offset-10 modifiche">
+              <ul class="nav nav-pills">
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-sort-desc"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#"><i class="fa fa-cogs"></i> Modifica</a></li>
+                          <li><a href="#"><i class="fa fa-check"></i> Effettuato</a></li>
+                          <li><a href="#" class="button_elimina_box_viaggio" data-toggle="modal" data-target="#myModal_elimina"><i class="fa fa-times"></i> Elimina</a></li>
+                        </ul>
+                    </li>
+                </ul>
+          </div>
+
+
+          <div class="name_viaggio">
+              <a href="{{ path ('viaggio', {'id': viaggio.id}) }}">
+                <h1>{{ viaggio.meta | capitalize }}</h1>
+                <h2></h2>
+                <h3>{{ viaggio.getStartData()|date('d/m/Y') }}<span> | </span>{{ viaggio.getEndData()|date('d/m/Y') }}</h3>
+              </a>
+          </div>
+
+        <div class="img_viaggio">
+            <a href="{{ path ('viaggio', {'id': 1}) }}"><img src="/img/img_viaggio1.jpg"></a>
+        </div>
+        <div class="space_white">
+        </div>
+        <div class="row comment">
+          <div class="col-md-2"><img src="/img/profile_viaggio.jpg"></div>
+          <div class="col-md-8"><p><span>Mirko D’ Amati :</span> Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur</p></div>
+        </div>
+        <div class="row comment">
+          <div class="col-md-2"><img src="/img/profile_viaggio2.jpg"></div>
+          <div class="col-md-8"><p><span>Luisa Cacciagore :</span> Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur</p></div>
+        </div>
+        <div class="row new_comment">
+          <!--<input class="col-md-10 col-md-offset-1" type="text" name="comment" value="" placeholder="Scrivi un commento">-->
+          <textarea class="col-md-10 col-md-offset-1 new_commento_aggiungere" name="name" rows="2" cols="24" placeholder="Scrivi un commento"></textarea>
+        </div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}
+
+
+
+{% block modal_elimana_viaggio %}
+<div class="modal fade" id="myModal_elimina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Elimina</h4>
+      </div>
+      <div class="modal-body">
+        Sei veramente sicuro di volere eliminare il viaggio?
+      </div>
+      <div class="modal-footer">
+        <a href=""><button type="button" class="btn btn-primary annulla" data-dismiss="modal">Annulla</button></a>
+        <a href=""><button type="button" id="button_elimina" class="btn btn-primary">Elimina</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block modal_aggiungi_amici %}
+<div class="modal fade" id="myModal_aggiungi_amici" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Aggiungi email degli amici che non hanno Facebook</h4>
+      </div>
+      <div class="modal-body new_email_box">
+        <div class="row">
+          <div class="col-md-7">
+            <textarea class="new_email" name="name" rows="1" cols="40" placeholder="email.explample.com" style="height: 34px; padding: 6px;"></textarea>
+          </div>
+          <div class="col-md-4">
+            <a href="" class="btn btn-primary aggiungi_email">+</a>
+          </div>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+            <ul class="spazio_email"></ul>
+          </div>
+        </div>
+        </div>
+      </div>
+      <ul>
+      </ul>
+
+      <div class="modal-footer">
+        <a href=""><button type="button" class="btn btn-primary annulla" data-dismiss="modal">Annulla</button></a>
+        <a href=""><button type="button" id="button_elimina" class="btn btn-primary">Aggiungi</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+{{ nome | capitalize}}
+  {{ cognome | capitalize}}
+{% endblock %}
+
+{% block bio %}
+  <div class="row bio">
+    <div class="col-md-2 col-md-offset-5">
+      <h2>  {{ nome | capitalize}}
+        {{ cognome | capitalize}} </h2>
+      <img src="/img/profile_utente.jpg" class="img-circle profilo">
+    </div>
+  </div>
+{% endblock %}
+
+{% block form %}
+  <div class="row">
+      <div class="form_utente">
+        <div class="col-md-8 col-md-offset-2  riga_form">
+          <div class="row">
+              <div class="col-md-6 no_padding">
+                  <a href="#" class=" btn btn-default_utente" href="#" role="button"><i class="fa fa-book"></i> <br>Viaggi passati</a>
+              </div>
+            <div class="col-md-6 no_padding">
+                <a href="#" class="active btn btn-default_utente" href="#" role="button"><i class="fa fa-paper-plane"></i> <br>Viaggi in programma</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block box_viaggio %}
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 box_viaggio">
+
+          <div class="name_viaggio">
+            <a href="{{ path ('viaggio', {'id': 2}) }}"></a>
+              <h1>{{ meta| capitalize }}</h1>
+                <h3>{{ start|date('d/m/Y') }} <span>|</span> {{ end|date('d/m/Y') }} </h3>
+
+          </div>
+
+        <div class="img_viaggio">
+            <a href="viaggio.html"><img src="/img/img_viaggio3.jpg"></a>
+        </div>
+        <div class="space_white">
+        </div>
+        <div class="row comment">
+          <div class="col-md-2"><a href="{{ path ('viaggio', {'id': 2}) }}"><img src="/img/profile_viaggio.jpg"></a></div>
+          <div class="col-md-8"><p><span>Mirko D’ Amati :</span> Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur</p></div>
+        </div>
+        <div class="row comment">
+          <div class="col-md-2"><img src="/img/profile_viaggio2.jpg"></div>
+          <div class="col-md-8"><p><span>Luisa Cacciagore :</span> Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur</p></div>
+        </div>
+        <div class="row new_comment">
+          <textarea class="col-md-10 col-md-offset-1 new_commento_aggiungere" name="name" rows="2" cols="24" placeholder="Scrivi un commento"></textarea>
+        </div>
+  </div>
+</div>
+{% endblock %}

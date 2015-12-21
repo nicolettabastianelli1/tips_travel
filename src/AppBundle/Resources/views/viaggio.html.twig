@@ -1,0 +1,45 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+{{ nome | capitalize}}
+  {{ cognome | capitalize}}
+{% endblock %}
+
+{% block body_class %}social_home{% endblock %}
+
+{% block descrizione_viaggio %}
+<div class ="descrizione_viaggio">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 name_commento">
+            <h1>{{ meta| capitalize }}</h1>
+              <h3>{{ start|date('d/m/Y') }} <span>|</span> {{ end|date('d/m/Y') }} </h3>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-12 img_viaggio commento"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 box_commento">
+            <div class="description_comment">
+                <div class="row">
+                  <div class="col-md-12"><p>{{ descrizione | capitalize }}</p></div>
+                </div>
+                  <div class="row comment_viaggio">
+                    <div class="col-md-2"><img src="/img/profile_viaggio.jpg"></div>
+                    <div class="col-md-10"><p><span>Mirko D’ Amati :</span> Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur</p></div>
+                  </div>
+                  <div class="row comment_viaggio">
+                    <div class="col-md-2"><img  src="/img/profile_viaggio2.jpg"></div>
+                    <div class="col-md-10"><p><span>Luisa Cacciagore : :</span> Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur</p></div>
+                  </div>
+
+                  <div class="row new_comment_viaggio">
+                  <textarea class="col-md-10 col-md-offset-1 new_commento_aggiungere" name="name" rows="2" cols="24" placeholder="Scrivi un commento"></textarea>
+                  </div>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

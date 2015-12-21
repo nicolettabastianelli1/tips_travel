@@ -1,0 +1,505 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: block;
+		clear: both;
+}
+
+.landing{
+  background-image: url("../img/landing_page.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+img{
+  max-width: 100%;
+}
+
+.head{
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 60px;
+	color: white;
+	margin-top: 30px;
+
+}
+
+.login{
+  text-align: center;
+  margin-top: 60px;
+}
+
+.login_block{
+  display: inline;
+	text-align: center;
+	margin-top: 60px;
+}
+
+.login_block .logo {
+  padding-top: 50px;
+}
+
+.login_block .facebook{
+  padding-top: 40px;
+}
+
+.description{
+  margin-top: 60px;
+
+}
+.description h2{
+  color: white;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 36px;
+  font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 800;
+}
+.description p{
+  padding-top: 15px;
+  padding-left: 134px;
+  padding-right: 134px;
+  font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 26px;
+  color: #FFF;
+  text-align: justify;
+}
+.footer{
+  margin-top: 60px;
+  background-color: #575757;
+  height: 100px;
+}
+.footer p{
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+
+}
+.social{
+		background-image: url("../img/sfondo-social.jpg");
+		background-position: center top;
+		border-left: 2px solid #dddddd;
+		border-right: 2px solid #dddddd;
+
+}
+.social_home{
+		background-image: url("../img/sfondo.jpg");
+		border-left: 2px solid #dddddd;
+		border-right: 2px solid #dddddd;
+
+}
+.header{
+	height: 116px;
+	background-color: white;
+}
+.logo_social{
+	padding-top: 48px;
+	margin-left: 50px;
+}
+div.menu {
+	padding-top: 30px;
+
+}
+div.menu ul li{
+	padding-right: 30px;
+}
+.nav-pills > li > a {
+    border-radius: 4px;
+		font-size: 20px;
+    text-align: center;
+		color: #ed7416;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    background-color: transparent;
+		    color: #7E5490;
+}
+.nav > li > a:focus, .nav > li > a.active {
+    color: #7E5490;
+}
+.btn-primary {
+    color: #FFF;
+    background-color: #7E5490;
+    border-color: #7E5490;
+	}
+.btn-primary.annulla{
+	background-color: #ED7416;
+}
+.btn-primary a:hover{
+	background-color: red;
+}
+
+.bio{
+	height: 200px;
+	background-image: url("../img/cover.jpg");
+	border-bottom: 10px solid #7e5490;
+}
+.border_bio  {
+	height: 10px;
+	background-color: #ed7416;
+	margin-top: 5px;
+}
+.bio h2{
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	text-transform: uppercase;
+	padding-top: 50px;
+	font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.bio_home{
+	text-align: center;
+}
+.bio_utente{
+	height: 200px;
+	background-image: url("../img/cover_utente.jpg");
+	border-bottom: 10px solid #7e5490;
+}
+.border_bio {
+	height: 10px;
+	background-color: #ed7416;
+	margin-top: 5px;
+}
+.bio_utente h2{
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	text-transform: uppercase;
+	padding-top: 50px;
+	font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+img .profilo{
+	z-index: 10;
+}
+.profilo{
+	width: 150px;
+	height: 150px;
+}
+
+.form{
+	margin-top: 180px;
+	background-image: url("../img/form.jpg");
+	height: 190px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 42px;
+    padding: 10px 46px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555;
+		border-radius: 0px !important;
+		border-right:  1px solid white !important;
+    background-color:#fefefe;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+		opacity: 0.8;
+}
+
+.form-control:focus {
+    border-color: transparent !important;
+    outline: 0px none;
+    box-shadow: transparent !important;
+}
+.form-inline h2{
+	text-align: center;
+	font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+	color: white;
+}
+.form-group{
+	margin-top: 30px;
+}
+
+button, input, optgroup, select, textarea {
+    font-size: 13px !important;
+    margin-right: 0px !important;
+}
+.btn-default{
+	background-color: #ED7416;
+	color: white;
+	width: 88px;
+	height: 44px;
+	border: none;
+	border-radius: 8px;
+}
+.form_utente{
+	margin-top: 130px;
+	background-image: url("../img/form.jpg");
+	height: 190px;
+}
+.btn-default_utente{
+	background-color: #969595;
+	color: #FFF;
+	height: 63px;
+	border-radius: 0px;
+	opacity: 1;
+	line-height: 29px;
+	border-right: 1px solid #ED7416;
+	display: block;
+}
+.no_padding{
+	padding: 0;
+}
+.btn-default_utente:last-child{
+	border-right: none;
+}
+.btn:hover{
+text-decoration: none !important;
+background-color: #ED7416 !important;
+color: white !important;
+border-right: 1px solid white;
+}
+.btn:hover:last-child{
+text-decoration: none !important;
+background-color: #ED7416 !important;
+color: white !important;
+border-left: 1px solid white;
+}
+.btn:focus{
+	text-decoration: none !important;
+	background-color: #ED7416 !important;
+	color: white !important;
+	border: none !important;
+
+}
+.riga_form{
+	padding-top: 66px;
+	opacity: 0.8;
+}
+.no-padding-right {
+	padding-right: 0;
+}
+
+.no-padding-left {
+	padding-left: 0;
+}
+
+#exampleInputEmail2{
+color: #2f2f2f;
+}
+.box_viaggio{
+	width: 50%;
+	margin-top: 100px;
+	background: white;
+	text-align: center;
+	margin-left: 23%;
+	margin-bottom: 100px;
+	padding: 0;
+	border-radius: 4px;
+box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176)
+}
+.name_viaggio h1{
+		font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+		font-weight: bold;
+		color: #7e5490;
+		font-size: 46px;
+}
+.name_viaggio a {
+	text-decoration: none;
+}
+.name_viaggio h3{
+		font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+		font-weight: bold;
+		color: #7e5490;
+		font-size: 20px;
+		padding-bottom: 20px;
+		border-bottom: 4px solid #7e5490;
+}
+.name_viaggio h3 span{
+	color: #f97611;
+}
+.img_viaggio{
+	border-top: 4px solid #f97611;
+	border-bottom: 4px solid #7e5490;
+}
+.space_white {
+	border-top: 4px solid #F97611;
+	margin-top: 6px;
+}
+.modifiche{
+	height: 30px;
+}
+.comment{
+	height: 100px;
+	border-bottom: 3px solid #e9e6dd;
+	margin-left: 0;
+	margin-right: 0;
+}
+.comment img{
+	padding-top: 24px;
+}
+.comment p{
+	color: #2f2f2f;
+	font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+	text-align: left;
+	margin-top: 32px;
+	font-size: 13px;
+	padding-left: 0px;
+}
+.comment span{
+	color: #f97611;
+}
+.new_comment{
+	height: 97px;
+	padding-top: 20px;
+}
+.textarea{
+	color: grey;
+p	adding-top: 5px;
+}
+.new_comment p{
+	color: #949494;
+	font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+	text-align: left;
+	padding: 8px;
+	border: 1px solid #e2e2e2;
+	margin-top: 20px;
+	margin-left: 27px;
+}
+.name_commento h1{
+	font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	color: #7e5490;
+	font-size: 46px;
+}
+.name_commento{
+	text-align: center;
+	margin-top: 100px;
+}
+.name_commento h3{
+		font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+		font-weight: bold;
+		color: #7e5490;
+		font-size: 20px;
+		padding-bottom: 20px;
+}
+.name_commento h3 span{
+	color: #f97611;
+}
+
+.box_commento{
+	margin-bottom: 100px;
+}
+.img_viaggio.commento{
+	height: 270px;
+	overflow: hidden;
+	background-image: url("/img/viaggio_commento.jpg");
+	background-position: 26% 36%;
+}
+.description_comment{
+	text-align: center;
+	background: white;
+	border-radius: 4px;
+box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176);
+}
+.description_comment p{
+		padding: 10px;
+		font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+		padding: 30px;
+		text-align: justify;
+		line-height: 28px;
+		color: #737373;
+}
+.comment_viaggio{
+	border-bottom: 3px solid #e9e6dd;
+	border-top: 3px solid #e9e6dd;
+	margin-left: 0;
+	margin-right: 0;
+}
+.comment_viaggio img{
+	padding-top: 24px;
+}
+.comment_viaggio p{
+	color: #2f2f2f;
+	font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+	text-align: left;
+	margin-top: 14px;
+	font-size: 13px;
+	padding-left: 0px;
+}
+.comment_viaggio span{
+	color: #f97611;
+}
+.new_comment_viaggio{
+	height: 97px;
+	padding-top: 20px;
+}
+.new_comment_viaggio p{
+	color: #949494;
+	font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+	text-align: left;
+	padding: 8px;
+	border: 1px solid #e2e2e2;
+	margin-top: 25px;
+	margin-left: 29px;
+}
+
+.home_viaggio{
+	width: 50%;
+	background: white;
+	text-align: center;
+	padding: 0;
+	border-radius: 4px;
+box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176);
+}
+.box_home{
+	padding-top: 150px;
+	padding-bottom: 50px;
+	background-image: url('../img/divisorio.png');
+	background-repeat: repeat-y;
+	background-position: 50% 0%;
+}
+.nome{
+	margin-top: 200px;
+}
+.timeline{
+	margin-top: 178px;
+	text-align: center;
+}
+.nome h2{
+	color: #7e5490;
+	font-family:  Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 26px;
+}
+.nome a{
+	text-decoration: none;
+}
+.profilo_home{
+	width: 100px;
+	height: 100px;
+}
+.dropdown-menu li a:hover{
+	color: #ED7416;
+	background-color: none;
+}
+.spazio_email{
+	width: 309px;
+margin-top:29px ;
+}
+.spazio_email li{
+	list-style: none;
+	padding-top: 10px;
+}
+
+@media (min-width: 992px){
+	.box_home{
+		background-position: 33.33% 0%;
+	}
+	.social{
+		{
+			background-position: 33.33% 0%;
+		}
+	}
+
+}
+@media (max-midth: 768px){
+
+}
